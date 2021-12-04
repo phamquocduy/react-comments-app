@@ -52,7 +52,7 @@ export const MenuButtonMobile = styled.button`
   justify-content: center;
 
   :hover {
-    background-color: rgba(243, 244, 246, 1);
+    background-color: var(--gray-light-1);
   }
 `;
 
@@ -89,23 +89,25 @@ export const AnchorsWrapperDesktop = styled.div`
 `;
 
 export const AnchorItemDesktop = styled(Link)`
-  color: rgb(128, 128, 128);
+  color: var(--gray-1);
   margin-left: 16px;
   margin-right: 16px;
   display: inline-flex;
   align-items: center;
-  padding-top: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  font-size: 14px;
+  padding: 4px 4px 0px 4px;
+  font-size: 16px;
   line-height: 20px;
   font-weight: 500;
   text-decoration: none;
 
-  :hover,
+  :hover {
+    border-bottom: 4px solid var(--gray-1);
+    color: var(--black);
+  }
+
   &.selected {
-    border-bottom: 2px solid blue;
-    color: rgb(48, 48, 48);
+    border-bottom: 4px solid var(--blue-1);
+    color: var(--blue-1);
   }
 `;
 
@@ -121,23 +123,23 @@ export const AnchorsWrapperMobile = styled.div`
 
 export const AnchorItemMobile = styled.button`
   border-left: 4px solid transparent;
-  color: rgb(107, 114, 128);
+  color: var(--gray-1);
   display: block;
   padding: 8px 16px 8px 12px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   font-weight: 500;
   text-decoration: none;
 
   :hover {
-    background-color: rgb(249, 250, 251);
-    border-color: rgb(200, 200, 200);
-    color: black;
+    background-color: var(--gray-light-1);
+    border-color: var(--gray-1);
+    color: var(--black);
   }
 
   &.selected {
-    background-color: rgb(238, 242, 255);
-    border-left: 4px solid rgb(99, 102, 241);
-    color: rgb(67, 56, 202);
+    background-color: var(--blue-light-1);
+    border-left: 4px solid var(--blue-1);
+    color: var(--blue-1);
   }
 `;

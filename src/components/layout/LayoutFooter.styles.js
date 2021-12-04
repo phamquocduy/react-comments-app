@@ -42,10 +42,10 @@ export const FooterLinksWrapper = styled.div`
 `;
 
 export const FooterLink = styled.a`
-  color: rgba(156, 163, 175, 1);
+  color: var(--gray-1);
 
   :hover {
-    color: rgba(107, 114, 128, 1);
+    color: var(--gray-dark-1);
   }
 `;
 
@@ -77,5 +77,5 @@ export const CopyrightLabel = styled.p`
   text-align: center;
   font-size: 16px;
   line-height: 24px;
-  color: rgba(156, 163, 175, 1);
+  color: var(--gray-1);
 `;
