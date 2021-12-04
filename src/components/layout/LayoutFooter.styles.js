@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  // TODO fix for small res
+  /* @media (min-height: 768px) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  } */
 `;
 
 export const FooterWrapper = styled.div`
