@@ -7,11 +7,30 @@ import { Users } from "../features/users";
 import { Posts } from "../features/posts";
 import { Comments } from "../features/comments";
 
+const APP_ROUTES = [
+  {
+    path: "/",
+    label: "Home",
+  },
+  {
+    path: "users",
+    label: "Users",
+  },
+  {
+    path: "posts",
+    label: "Posts",
+  },
+  {
+    path: "comments",
+    label: "Comments",
+  },
+];
+
 export const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout appRoutes={APP_ROUTES} />}>
           <Route index element={<HomePage />} />
           <Route path="users" element={<Users />} />
           <Route path="posts" element={<Posts />} />
