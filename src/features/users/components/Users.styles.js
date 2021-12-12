@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 0px 16px;
+  padding: 0px 16px;
   text-align: center;
 
   @media (min-width: 1024px) {
@@ -19,40 +19,40 @@ export const TitleWrapper = styled.div`
   margin-bottom: 0px;
 
   @media (min-width: 640px) {
-    margin-top: 16px auto 0px auto;
+    margin: 16px auto 0px auto;
     max-width: 576px;
   }
 
   @media (min-width: 1024px) {
     max-width: 1024px;
   }
-`;
 
-export const TitleH2 = styled.h2`
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  h2 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
 
-  @media (min-width: 640px) {
-    font-size: 36px;
-    line-height: 40px;
+    @media (min-width: 640px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 28px;
   }
 `;
 
-export const TitleP = styled.p`
-  font-size: 20px;
-  line-height: 28px;
-`;
-
 export const UserList = styled.ul`
-  padding: 0px;
-  margin-left: auto;
-  margin-right: auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 16px;
   row-gap: 32px;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
   list-style-type: none;
 
   @media (min-width: 640px) {
