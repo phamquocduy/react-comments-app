@@ -2,10 +2,10 @@ import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "../components/layout";
+
 import { HomePage, NoMatchPage } from "../features/public-page";
-import { Users } from "../features/users";
-import { Posts } from "../features/posts";
-import { Comments } from "../features/comments";
+import { UserRoutes } from "../features/users";
+import { PostRoutes } from "../features/posts";
 
 const APP_ROUTES = [
   {
@@ -20,10 +20,6 @@ const APP_ROUTES = [
     path: "posts",
     label: "Posts",
   },
-  {
-    path: "comments",
-    label: "Comments",
-  },
 ];
 
 export const AppRoutes = () => {
@@ -32,9 +28,9 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Layout appRoutes={APP_ROUTES} />}>
           <Route index element={<HomePage />} />
-          <Route path="users" element={<Users />} />
-          <Route path="posts" element={<Posts />} />
-          <Route path="comments" element={<Comments />} />
+
+          <Route path="users//*" element={<UserRoutes />} />
+          <Route path="posts//*" element={<PostRoutes />} />
 
           {/* this route acts like a catch-all for URLs that we don't have explicit routes for */}
           <Route path="*" element={<NoMatchPage />} />
