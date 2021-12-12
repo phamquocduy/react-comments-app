@@ -19,8 +19,8 @@ const GlobalStyles = createGlobalStyle`
     --gray-dark-1: rgb(107, 114, 128);
     --gray-light-1: rgb(243, 244, 246);
     --black: black;
-    --blue-1: rgb(67, 56, 202);
-    --blue-dark-1: rgb(99, 102, 241);
+    --blue-1: rgb(99, 102, 241);
+    --blue-dark-1: rgb(67, 56, 202);
     --blue-light-1: rgb(238, 242, 255);
   }
 `;

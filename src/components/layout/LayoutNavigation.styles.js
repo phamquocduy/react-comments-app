@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Navigation = styled.nav`
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.05);
 `;
 
 export const NavigationWrapper = styled.div`
