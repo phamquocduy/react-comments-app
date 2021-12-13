@@ -5,18 +5,7 @@ import { useUsers } from "../../users";
 import { usePosts } from "../hooks";
 
 import * as Styled from "./Posts.styles";
-
-const TEST_POST_DATA = {
-  category: "Article",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore.",
-  date: "Mar 10, 2020",
-  postImageUrl:
-    "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-  readingTime: "5 min",
-  authorImageUrl:
-    "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-};
+import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
 export const Posts = () => {
   const navigate = useNavigate();
@@ -49,23 +38,26 @@ export const Posts = () => {
         {postsWithAuthors.map((item) => (
           <Styled.PostTile key={item.title}>
             <Styled.PostImgWrapper>
-              <img src={TEST_POST_DATA.postImageUrl} alt="" />
+              <img src={POST_IMG} alt="" />
             </Styled.PostImgWrapper>
 
             <Styled.PostBody>
               <div onClick={() => navigate(`/posts/${item.id}`)}>
                 <Styled.PostCategoryP>
-                  <a href="">{TEST_POST_DATA.category}</a>
+                  <a href="">Article</a>
                 </Styled.PostCategoryP>
                 <Styled.PostContentWrapper>
                   <Styled.PostTitle>{item.title}</Styled.PostTitle>
-                  <Styled.PostDescription>{TEST_POST_DATA.description}</Styled.PostDescription>
+                  <Styled.PostDescription>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat
+                    doloribus, eveniet dolore.
+                  </Styled.PostDescription>
                 </Styled.PostContentWrapper>
               </div>
 
               <Styled.PostAuthorWrapper>
                 <Styled.PostAuthorImgWrapper>
-                  <img src={TEST_POST_DATA.authorImageUrl} alt="" />
+                  <img src={USER_IMG} alt="" />
                 </Styled.PostAuthorImgWrapper>
 
                 <Styled.PostAuthorDescWrapper>
@@ -74,9 +66,9 @@ export const Posts = () => {
                   </p>
 
                   <div>
-                    <time>{TEST_POST_DATA.date}</time>
+                    <time>Dec 13, 2021</time>
                     <span>&#183;</span>
-                    <span>{TEST_POST_DATA.readingTime} read</span>
+                    <span>5 min read</span>
                   </div>
                 </Styled.PostAuthorDescWrapper>
               </Styled.PostAuthorWrapper>

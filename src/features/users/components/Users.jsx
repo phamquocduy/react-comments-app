@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUsers } from "../hooks";
 
 import * as Styled from "./Users.styles";
-
-const TEST_IMG_URL =
-  "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80";
+import { USER_IMG } from "../../../constants/test-data";
 
 export const Users = () => {
   const navigate = useNavigate();
@@ -27,7 +25,7 @@ export const Users = () => {
         {users.map((user) => (
           <li key={user.id}>
             <Styled.UserWrapper>
-              <Styled.UserImage src={TEST_IMG_URL} alt={user.name} onClick={() => navigate(`/users/${user.id}`)} />
+              <Styled.UserImage src={USER_IMG} alt={user.name} onClick={() => navigate(`/users/${user.id}`)} />
               <Styled.UserDesc>
                 <h3>{user.name}</h3>
                 <a href="mailto: abc@example.com">{user.email}</a>

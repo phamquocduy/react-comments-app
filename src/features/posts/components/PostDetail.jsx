@@ -6,14 +6,7 @@ import { usePost } from "../hooks";
 import { useComments } from "../../comments";
 
 import * as Styled from "./PostDetail.styles";
-
-const TEST_POST_DATA = {
-  date: "2h ago",
-  postImageUrl:
-    "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-  authorImageUrl:
-    "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-};
+import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
 export const PostDetail = () => {
   const { id: postId } = useParams();
@@ -27,7 +20,7 @@ export const PostDetail = () => {
   return (
     <Styled.Wrapper>
       <Styled.PostCoverWrapper>
-        <img src={TEST_POST_DATA.postImageUrl} alt="" className="w-full h-96 object-center object-cover" />
+        <img src={POST_IMG} alt="" className="w-full h-96 object-center object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-white" />
       </Styled.PostCoverWrapper>
 
@@ -53,7 +46,7 @@ export const PostDetail = () => {
               <Styled.CommentContentWrapper>
                 <>
                   <Styled.AvatarSection>
-                    <img src={TEST_POST_DATA.authorImageUrl} alt="" />
+                    <img src={USER_IMG} alt="" />
 
                     <span>
                       <ChatAlt style={{ color: "var(--gray-1)" }} size={20} />
@@ -65,7 +58,7 @@ export const PostDetail = () => {
                       <p>
                         <a>{comment.email}</a>
                       </p>
-                      <p>Commented {TEST_POST_DATA.date}</p>
+                      <p>Commented 2h ago</p>
                     </Styled.PostAuthorDescWrapper>
 
                     <Styled.PostAuthorCommentWrapper>

@@ -5,9 +5,7 @@ import { PrimaryButton, OutlineButton } from "../../../components/bricks";
 import { useUser } from "../hooks";
 
 import * as Styled from "./UserDetail.styles";
-
-const TEST_IMG_URL =
-  "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80";
+import { USER_IMG } from "../../../constants/test-data";
 
 export const UserDetail = () => {
   const { id: userId } = useParams();
@@ -17,7 +15,7 @@ export const UserDetail = () => {
     <Styled.MainContent>
       <Styled.DetailHeader>
         <Styled.Heading>
-          <img src={TEST_IMG_URL} alt="" />
+          <img src={USER_IMG} alt="" />
 
           <Styled.UserDescWrapper>
             <h1>{currUser?.name}</h1>
