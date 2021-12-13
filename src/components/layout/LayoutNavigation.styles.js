@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import breakpoints from "../../constants/breakpoints";
+import { ContentMaxWidthStyle, XMarginAutoStyle } from "../../global-styles";
+
 export const Navigation = styled.nav`
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.05);
 `;
@@ -10,18 +13,17 @@ export const NavigationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   height: 64px;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 8px;
   padding-right: 8px;
+  ${ContentMaxWidthStyle}
+  ${XMarginAutoStyle}
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (min-width: 1024px) {
+  @media (${breakpoints.devices.lg}) {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -34,7 +36,7 @@ export const WrapperForMobile = styled.div`
   display: flex;
   align-items: center;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     display: none;
   }
 `;
@@ -62,7 +64,7 @@ export const WrapperForDesktop = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     align-items: stretch;
     justify-content: flex-start;
   }
@@ -82,7 +84,7 @@ export const Logo = styled.img`
 export const AnchorsWrapperDesktop = styled.div`
   display: none;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     display: flex;
     margin-left: 24px;
   }
@@ -116,7 +118,7 @@ export const AnchorsWrapperMobile = styled.div`
   margin-top: 4px;
   margin-bottom: 4px;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     display: none;
   }
 `;

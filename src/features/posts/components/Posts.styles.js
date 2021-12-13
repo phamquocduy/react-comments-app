@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
+import breakpoints from "../../../constants/breakpoints";
+import { XMarginAutoStyle, CircleCornersStyle } from "../../../global-styles";
+
 export const Wrapper = styled.div`
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0px 16px;
   text-align: center;
 
-  @media (min-width: 1024px) {
+  @media (${breakpoints.devices.lg}) {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -18,13 +18,13 @@ export const TitleWrapper = styled.div`
   margin-top: 20px;
   margin-bottom: 0px;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     margin: 16px auto 0px auto;
     max-width: 576px;
   }
 
-  @media (min-width: 1024px) {
-    max-width: 1024px;
+  @media (${breakpoints.devices.lg}) {
+    max-width: ${breakpoints.screenSizes.lg};
   }
 
   h2 {
@@ -33,7 +33,7 @@ export const TitleWrapper = styled.div`
     font-weight: 800;
     letter-spacing: -0.025em;
 
-    @media (min-width: 640px) {
+    @media (${breakpoints.devices.sm}) {
       font-size: 36px;
       line-height: 40px;
     }
@@ -48,12 +48,11 @@ export const TitleWrapper = styled.div`
 export const PostList = styled.div`
   display: grid;
   gap: 20px;
-  margin-top: 48px;
   max-width: 512px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 48px;
+  ${XMarginAutoStyle}
 
-  @media (min-width: 1024px) {
+  @media ( ${breakpoints.devices.lg}) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: none;
   }
@@ -137,7 +136,7 @@ export const PostAuthorImgWrapper = styled.div`
   img {
     height: 40px;
     width: 40px;
-    border-radius: 9999px;
+    ${CircleCornersStyle}
   }
 `;
 

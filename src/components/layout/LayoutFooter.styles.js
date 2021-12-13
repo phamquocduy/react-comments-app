@@ -1,33 +1,35 @@
 import styled from "styled-components";
 
+import breakpoints from "../../constants/breakpoints";
+import { ContentMaxWidthStyle, XMarginAutoStyle } from "../../global-styles";
+
 export const Footer = styled.footer`
   // TODO fix for small res
-  /* @media (min-height: 768px) {
+  /* @media (min-height: ${breakpoints.devices.md}) {
     position: fixed;
-    left: 0;
-    bottom: 0;
+    left: 0px;
+    bottom: 0px;
     width: 100%;
   } */
 `;
 
 export const FooterWrapper = styled.div`
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 48px 16px 16px 16px;
+  ${ContentMaxWidthStyle}
+  ${XMarginAutoStyle}
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (min-width: 768px) {
+  @media (${breakpoints.devices.md}) {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  @media (min-width: 1024px) {
+  @media (${breakpoints.devices.lg}) {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -39,7 +41,7 @@ export const FooterLinksWrapper = styled.div`
   margin-right: 0px;
   margin-left: 24px;
 
-  @media (min-width: 768px) {
+  @media (${breakpoints.devices.md}) {
     order: 2;
   }
 `;
@@ -70,7 +72,7 @@ export const FooterLinkIcon = styled(GitHubIconSvg)`
 export const FooterLabelWrapper = styled.div`
   margin-top: 32px;
 
-  @media (min-width: 768px) {
+  @media (${breakpoints.devices.md}) {
     margin-top: 0px;
     order: 1;
   }

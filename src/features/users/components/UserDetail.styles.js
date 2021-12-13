@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import breakpoints from "../../../constants/breakpoints";
+import { ContentMaxWidthStyle, XMarginAutoStyle, CircleCornersStyle } from "../../../global-styles";
+
 export const MainContent = styled.main`
   min-height: 100%;
   width: 100%;
@@ -8,27 +11,26 @@ export const MainContent = styled.main`
 `;
 
 export const DetailHeader = styled.div`
-  max-width: 768px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: ${breakpoints.screenSizes.md};
   padding-left: 16px;
   padding-right: 16px;
+  ${XMarginAutoStyle}
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (min-width: 768px) {
+  @media (${breakpoints.devices.md}) {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  @media (min-width: 1024px) {
-    max-width: 1280px;
+  @media (${breakpoints.devices.lg}) {
     padding-left: 32px;
     padding-right: 32px;
+    ${ContentMaxWidthStyle}
   }
 `;
 
@@ -40,7 +42,7 @@ export const Heading = styled.div`
   img {
     height: 64px;
     width: 64px;
-    border-radius: 9999px;
+    ${CircleCornersStyle}
   }
 `;
 
@@ -78,7 +80,7 @@ export const ToolbarWrapper = styled.div`
     margin-top: 6px;
   }
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     flex-direction: row-reverse;
     justify-content: flex-end;
     margin-right: 0px;
@@ -91,7 +93,7 @@ export const ToolbarWrapper = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (${breakpoints.devices.md}) {
     flex-direction: row;
     margin-top: 0px;
     margin-right: 0px;
@@ -108,28 +110,27 @@ export const ToolbarWrapper = styled.div`
 `;
 
 export const DetailBody = styled.div`
-  max-width: 768px;
+  max-width: ${breakpoints.screenSizes.md};
   margin-top: 32px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+  ${XMarginAutoStyle}
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     border-radius: 8px;
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (min-width: 1024px) {
-    max-width: 1280px;
+  @media (${breakpoints.devices.lg}) {
+    ${ContentMaxWidthStyle}
   }
 `;
 
 export const DetailBodyHeader = styled.div`
   padding: 8px 16px;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -158,7 +159,7 @@ export const DetailBodyDl = styled.dl`
   border-top: 1px solid var(--gray-light-1);
   padding: 20px 16px;
 
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-left: 24px;
     padding-right: 24px;
@@ -166,7 +167,7 @@ export const DetailBodyDl = styled.dl`
 `;
 
 export const BodyDescItem = styled.div`
-  @media (min-width: 640px) {
+  @media (${breakpoints.devices.sm}) {
     grid-column: ${({ $colSpan = 1 }) => `span ${$colSpan} / span ${$colSpan}`};
   }
 
