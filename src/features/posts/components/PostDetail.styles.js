@@ -7,6 +7,7 @@ export const PostCoverWrapper = styled.div`
   width: 100%;
 
   img {
+    display: block;
     width: 100%;
     height: 450px;
     object-fit: cover;

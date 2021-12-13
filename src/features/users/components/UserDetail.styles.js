@@ -40,6 +40,7 @@ export const Heading = styled.div`
   margin-right: 0px;
 
   img {
+    display: block;
     height: 64px;
     width: 64px;
     ${CircleCornersStyle}

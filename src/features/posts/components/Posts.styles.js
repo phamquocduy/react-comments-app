@@ -26,6 +26,7 @@ export const PostTile = styled.div`
 
 export const PostImgWrapper = styled.div`
   img {
+    display: block;
     height: 192px;
     width: 100%;
     object-fit: cover;

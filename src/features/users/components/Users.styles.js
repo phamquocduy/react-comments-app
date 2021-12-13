@@ -38,6 +38,7 @@ export const UserWrapper = styled.div`
 `;
 
 export const UserImage = styled.img`
+  display: block;
   border: 2px solid transparent;
   height: 80px;
   width: 80px;
