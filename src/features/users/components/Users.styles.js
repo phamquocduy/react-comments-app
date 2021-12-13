@@ -3,48 +3,6 @@ import styled from "styled-components";
 import breakpoints from "../../../constants/breakpoints";
 import { ContentMaxWidthStyle, XMarginAutoStyle, CircleCornersStyle } from "../../../global-styles";
 
-export const Wrapper = styled.div`
-  padding: 0px 16px;
-  text-align: center;
-
-  @media (${breakpoints.devices.lg}) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-`;
-
-export const TitleWrapper = styled.div`
-  display: inline;
-  margin-top: 20px;
-  margin-bottom: 0px;
-
-  @media (${breakpoints.devices.sm}) {
-    margin: 16px auto 0px auto;
-    max-width: 576px;
-  }
-
-  @media (${breakpoints.devices.lg}) {
-    max-width: ${breakpoints.screenSizes.lg};
-  }
-
-  h2 {
-    font-size: 30px;
-    line-height: 36px;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-
-    @media (${breakpoints.devices.sm}) {
-      font-size: 36px;
-      line-height: 40px;
-    }
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 28px;
-  }
-`;
-
 export const UserList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

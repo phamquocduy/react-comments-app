@@ -5,6 +5,7 @@ import { useUsers } from "../../users";
 import { usePosts } from "../hooks";
 
 import * as Styled from "./Posts.styles";
+import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
 import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
 export const Posts = () => {
@@ -28,11 +29,11 @@ export const Posts = () => {
     });
 
   return (
-    <Styled.Wrapper>
-      <Styled.TitleWrapper>
+    <ContentWrapperStyle>
+      <TitleWrapperStyle>
         <h2>Posts</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-      </Styled.TitleWrapper>
+      </TitleWrapperStyle>
 
       <Styled.PostList>
         {postsWithAuthors.map((item) => (
@@ -76,6 +77,6 @@ export const Posts = () => {
           </Styled.PostTile>
         ))}
       </Styled.PostList>
-    </Styled.Wrapper>
+    </ContentWrapperStyle>
   );
 };

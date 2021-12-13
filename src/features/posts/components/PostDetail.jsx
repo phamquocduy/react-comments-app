@@ -6,6 +6,7 @@ import { usePost } from "../hooks";
 import { useComments } from "../../comments";
 
 import * as Styled from "./PostDetail.styles";
+import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
 import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
 export const PostDetail = () => {
@@ -18,17 +19,16 @@ export const PostDetail = () => {
   }
 
   return (
-    <Styled.Wrapper>
+    <ContentWrapperStyle>
       <Styled.PostCoverWrapper>
         <img src={POST_IMG} alt="" className="w-full h-96 object-center object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-white" />
       </Styled.PostCoverWrapper>
 
-      {/* TODO extract to brick component */}
-      <Styled.TitleWrapper style={{ top: "-72px", position: "relative" }}>
+      <TitleWrapperStyle style={{ top: "-72px", position: "relative" }}>
         <h2>Post Detail</h2>
         <p>{currPost.title}</p>
-      </Styled.TitleWrapper>
+      </TitleWrapperStyle>
 
       {/* TODO typography styles ?? */}
       <Styled.ContentWrapper>
@@ -72,6 +72,6 @@ export const PostDetail = () => {
           </li>
         ))}
       </Styled.CommentsWrapper>
-    </Styled.Wrapper>
+    </ContentWrapperStyle>
   );
 };

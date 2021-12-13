@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUsers } from "../hooks";
 
 import * as Styled from "./Users.styles";
+import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
 import { USER_IMG } from "../../../constants/test-data";
 
 export const Users = () => {
@@ -15,11 +16,11 @@ export const Users = () => {
   }
 
   return (
-    <Styled.Wrapper>
-      <Styled.TitleWrapper>
+    <ContentWrapperStyle>
+      <TitleWrapperStyle>
         <h2>Users</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-      </Styled.TitleWrapper>
+      </TitleWrapperStyle>
 
       <Styled.UserList>
         {users.map((user) => (
@@ -34,6 +35,6 @@ export const Users = () => {
           </li>
         ))}
       </Styled.UserList>
-    </Styled.Wrapper>
+    </ContentWrapperStyle>
   );
 };

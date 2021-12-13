@@ -1,17 +1,6 @@
 import styled from "styled-components";
 
-import breakpoints from "../../../constants/breakpoints";
 import { CircleCornersStyle } from "../../../global-styles";
-
-export const Wrapper = styled.div`
-  padding: 0px 16px;
-  text-align: center;
-
-  @media (${breakpoints.devices.lg}) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-`;
 
 export const PostCoverWrapper = styled.div`
   position: relative;
@@ -33,38 +22,6 @@ export const PostCoverWrapper = styled.div`
   }
 `;
 
-export const TitleWrapper = styled.div`
-  display: inline;
-  margin-top: 20px;
-  margin-bottom: 0px;
-
-  @media (${breakpoints.devices.sm}) {
-    margin: 16px auto 0px auto;
-    max-width: 576px;
-  }
-
-  @media (${breakpoints.devices.lg}) {
-    max-width: ${breakpoints.screenSizes.lg};
-  }
-
-  h2 {
-    font-size: 30px;
-    line-height: 36px;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-
-    @media (${breakpoints.devices.sm}) {
-      font-size: 36px;
-      line-height: 40px;
-    }
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 28px;
-  }
-`;
-
 export const ContentWrapper = styled.div`
   margin-left: 24px;
   margin-right: 24px;
@@ -82,6 +39,7 @@ export const CommentsWrapper = styled.ul`
 
 export const BlockWrapper = styled.div`
   position: relative;
+  margin-bottom: 24px;
 `;
 
 export const ConnectionLine = styled.span`
