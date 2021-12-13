@@ -14,7 +14,7 @@ export const PostDetail = () => {
   const { data: comments } = useComments(postId);
 
   if (!currPost || !comments) {
-    return "Error...";
+    return "Loading...";
   }
 
   return (

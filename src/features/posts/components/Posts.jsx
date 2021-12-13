@@ -13,7 +13,7 @@ export const Posts = () => {
   const { data: users } = useUsers();
 
   if (!posts || !users) {
-    return "Error...";
+    return "Loading...";
   }
 
   // get 10 random posts

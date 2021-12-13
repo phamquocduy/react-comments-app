@@ -11,7 +11,7 @@ export const Users = () => {
   const { data: users } = useUsers();
 
   if (!users) {
-    return "Error...";
+    return "Loading...";
   }
 
   return (

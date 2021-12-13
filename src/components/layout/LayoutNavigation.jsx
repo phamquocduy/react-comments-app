@@ -13,9 +13,13 @@ const LayoutNavigation = ({ appRoutes = [] }) => {
   const location = useLocation();
 
   const routeIsSelected = (route) => {
+    let loc = location.pathname.replace("/", "");
     let currRoute = route.path.replace("/", "");
 
-    return currRoute && location.pathname.replace("/", "").includes(currRoute);
+    let homePageIsSelected = !loc && !currRoute;
+    let otherRouteIsSelected = currRoute && loc.includes(currRoute);
+
+    return homePageIsSelected || otherRouteIsSelected;
   };
 
   return (
