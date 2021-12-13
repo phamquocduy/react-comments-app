@@ -12,7 +12,11 @@ const LayoutNavigation = ({ appRoutes = [] }) => {
   const [mobileMenuOpen, toggleMenuMobile] = useToggle();
   const location = useLocation();
 
-  const routeIsSelected = (route) => location.pathname.replace("/", "") === route.path.replace("/", "");
+  const routeIsSelected = (route) => {
+    let currRoute = route.path.replace("/", "");
+
+    return currRoute && location.pathname.replace("/", "").includes(currRoute);
+  };
 
   return (
     <>
