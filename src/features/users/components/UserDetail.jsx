@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { PrimaryButton, OutlineButton } from "../../../components/bricks";
 import { useUser } from "../hooks";
@@ -8,8 +8,13 @@ import * as Styled from "./UserDetail.styles";
 import { USER_IMG } from "../../../constants/test-data";
 
 export const UserDetail = () => {
+  const navigate = useNavigate();
   const { id: userId } = useParams();
   const { data: currUser } = useUser(userId);
+
+  if (!currUser) {
+    return "Loading...";
+  }
 
   return (
     <Styled.MainContent>
@@ -18,16 +23,16 @@ export const UserDetail = () => {
           <img src={USER_IMG} alt="" />
 
           <Styled.UserDescWrapper>
-            <h1>{currUser?.name}</h1>
+            <h1>{currUser.name}</h1>
             <p>
-              {currUser?.company?.bs}, {currUser?.company?.name}
+              {currUser.company.bs}, {currUser.company.name}
             </p>
           </Styled.UserDescWrapper>
         </Styled.Heading>
 
         <Styled.ToolbarWrapper>
-          <OutlineButton>Return to /Users</OutlineButton>
-          <PrimaryButton>View all posts</PrimaryButton>
+          <OutlineButton onClick={() => navigate(`/users`)}>Return to /Users</OutlineButton>
+          <PrimaryButton onClick={() => alert("TODO")}>View all user&apos;s posts</PrimaryButton>
         </Styled.ToolbarWrapper>
       </Styled.DetailHeader>
 
@@ -35,26 +40,26 @@ export const UserDetail = () => {
         <Styled.DetailBodyHeader>
           <h2>Adress</h2>
           <p>
-            {currUser?.address?.street} {currUser?.address?.suite}, {currUser?.address?.city}
+            {currUser.address.street} {currUser.address.suite}, {currUser.address.city}
           </p>
         </Styled.DetailBodyHeader>
 
         <Styled.DetailBodyDl>
           <Styled.BodyDescItem>
             <dt>Username</dt>
-            <dd>{currUser?.username}</dd>
+            <dd>{currUser.username}</dd>
           </Styled.BodyDescItem>
           <Styled.BodyDescItem>
             <dt>Email address</dt>
-            <dd>{currUser?.email}</dd>
+            <dd>{currUser.email}</dd>
           </Styled.BodyDescItem>
           <Styled.BodyDescItem>
             <dt>Website</dt>
-            <dd>{currUser?.website}</dd>
+            <dd>{currUser.website}</dd>
           </Styled.BodyDescItem>
           <Styled.BodyDescItem>
             <dt>Phone</dt>
-            <dd>{currUser?.phone}</dd>
+            <dd>{currUser.phone}</dd>
           </Styled.BodyDescItem>
           <Styled.BodyDescItem $colSpan="2">
             <dt>About</dt>
