@@ -1,21 +1,24 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { ChatAlt } from "@styled-icons/heroicons-solid";
+import { UseQueryResult } from "react-query";
+
+import { useComments, Comment } from "../../comments";
 
 import { usePost } from "../hooks";
-import { useComments } from "../../comments";
+import { Post } from "../types";
 
 import * as Styled from "./PostDetail.styles";
 import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
 import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
-export const PostDetail = () => {
-  const { id: postId } = useParams();
-  const { data: currPost } = usePost(postId);
-  const { data: comments } = useComments(postId);
+export const PostDetail: React.FC<{}> = () => {
+  const { id: postId } = useParams<{ id: string }>();
+  const { data: currPost }: UseQueryResult<Post, Error> = usePost(postId!);
+  const { data: comments }: UseQueryResult<Comment[], Error> = useComments(postId!);
 
   if (!currPost || !comments) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   return (

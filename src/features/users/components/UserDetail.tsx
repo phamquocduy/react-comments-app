@@ -1,19 +1,21 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { UseQueryResult } from "react-query";
 
 import { PrimaryButton, OutlineButton } from "../../../components/bricks";
 import { useUser } from "../hooks";
+import { User } from "../types";
 
 import * as Styled from "./UserDetail.styles";
 import { USER_IMG } from "../../../constants/test-data";
 
-export const UserDetail = () => {
+export const UserDetail: React.FC<{}> = () => {
   const navigate = useNavigate();
-  const { id: userId } = useParams();
-  const { data: currUser } = useUser(userId);
+  const { id: userId } = useParams<{ id: string }>();
+  const { data: currUser }: UseQueryResult<User, Error> = useUser(userId!);
 
   if (!currUser) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   return (
@@ -61,7 +63,7 @@ export const UserDetail = () => {
             <dt>Phone</dt>
             <dd>{currUser.phone}</dd>
           </Styled.BodyDescItem>
-          <Styled.BodyDescItem $colSpan="2">
+          <Styled.BodyDescItem $colSpan={2}>
             <dt>About</dt>
             <dd>
               Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur
@@ -69,7 +71,7 @@ export const UserDetail = () => {
               pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
             </dd>
           </Styled.BodyDescItem>
-          <Styled.BodyDescItem $colSpan="2">
+          <Styled.BodyDescItem $colSpan={2}>
             <dt>Posts</dt>
             <dd>
               <Styled.BodyDescPostsUl>

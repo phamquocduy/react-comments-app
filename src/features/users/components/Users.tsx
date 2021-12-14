@@ -1,18 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { UseQueryResult } from "react-query";
 
 import { useUsers } from "../hooks";
+import { User } from "../types";
 
 import * as Styled from "./Users.styles";
 import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
 import { USER_IMG } from "../../../constants/test-data";
 
-export const Users = () => {
+export const Users: React.FC<{}> = () => {
   const navigate = useNavigate();
-  const { data: users } = useUsers();
+  const { data: users }: UseQueryResult<User[], Error> = useUsers();
 
   if (!users) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   return (

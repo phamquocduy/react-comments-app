@@ -167,7 +167,11 @@ export const DetailBodyDl = styled.dl`
   }
 `;
 
-export const BodyDescItem = styled.div`
+interface BodyDescItemProps {
+  $colSpan?: number;
+}
+
+export const BodyDescItem = styled.div<BodyDescItemProps>`
   @media (${breakpoints.devices.sm}) {
     grid-column: ${({ $colSpan = 1 }) => `span ${$colSpan} / span ${$colSpan}`};
   }
