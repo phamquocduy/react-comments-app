@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "../components/layout";
+import { AppRoute } from "../components/types";
 
 import { HomePage, NoMatchPage } from "../features/public-page";
 import { UserRoutes } from "../features/users";
 import { PostRoutes } from "../features/posts";
 
-const APP_ROUTES = [
+const APP_ROUTES: AppRoute[] = [
   {
     path: "/",
     label: "Home",

@@ -3,14 +3,12 @@ import { Outlet } from "react-router-dom";
 
 import LayoutNavigation from "./LayoutNavigation";
 import LayoutFooter from "./LayoutFooter";
+import { AppRoute } from "../types";
 
 import * as Styled from "./Layout.styles";
 
 interface Props {
-  appRoutes: {
-    path: string;
-    label: string;
-  }[];
+  appRoutes: AppRoute[];
 }
 
 export const Layout: React.FC<Props> = ({ appRoutes }) => {

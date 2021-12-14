@@ -4,14 +4,10 @@ import { Menu as MenuIcon, X as CloseIcon } from "@styled-icons/heroicons-solid"
 import { useLocation } from "react-router-dom";
 
 import { useToggle } from "../../hooks";
+import { AppRoute } from "../types";
 
 import * as Styled from "./LayoutNavigation.styles";
 import ReactLogo from "../../assets/logo.svg";
-
-type AppRoute = {
-  path: string;
-  label: string;
-};
 
 interface Props {
   appRoutes: AppRoute[];

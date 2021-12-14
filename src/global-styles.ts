@@ -2,7 +2,6 @@ import styled, { createGlobalStyle, css } from "styled-components";
 
 import breakpoints from "./constants/breakpoints";
 
-// This becomes the source of truth for the application
 const GlobalStyles = createGlobalStyle`
   html {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
@@ -35,7 +34,7 @@ export const XMarginAutoStyle = css`
   margin-right: auto;
 `;
 
-/* does produce 'perfect 1/4 circle' corners */
+/* does produce "perfect 1/4 circle" corners */
 export const CircleCornersStyle = css`
   border-radius: 9999px;
 `;

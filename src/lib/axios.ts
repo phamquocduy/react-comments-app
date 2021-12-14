@@ -2,7 +2,7 @@ import Axios from "axios";
 
 const API_URL = "https://jsonplaceholder.typicode.com/";
 
-const authRequestInterceptor = (config) => {
+const authRequestInterceptor = (config: any) => {
   config.headers.Accept = "application/json";
 
   return config;
