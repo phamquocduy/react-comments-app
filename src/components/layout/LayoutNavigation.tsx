@@ -8,11 +8,20 @@ import { useToggle } from "../../hooks";
 import * as Styled from "./LayoutNavigation.styles";
 import ReactLogo from "../../assets/logo.svg";
 
-const LayoutNavigation = ({ appRoutes = [] }) => {
+type AppRoute = {
+  path: string;
+  label: string;
+};
+
+interface Props {
+  appRoutes: AppRoute[];
+}
+
+const LayoutNavigation: React.FC<Props> = ({ appRoutes = [] }) => {
   const [mobileMenuOpen, toggleMenuMobile] = useToggle();
   const location = useLocation();
 
-  const routeIsSelected = (route) => {
+  const routeIsSelected = (route: AppRoute) => {
     let loc = location.pathname.replace("/", "");
     let currRoute = route.path.replace("/", "");
 

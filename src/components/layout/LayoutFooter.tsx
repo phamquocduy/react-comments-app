@@ -1,5 +1,3 @@
-import React from "react";
-
 import * as Styled from "./LayoutFooter.styles";
 
 const LayoutFooter = () => {
@@ -8,7 +6,7 @@ const LayoutFooter = () => {
       <Styled.FooterWrapper>
         <Styled.FooterLinksWrapper>
           <Styled.FooterLink href="https://github.com/phamquocduy">
-            <Styled.FooterLinkIcon />
+            <Styled.GitHubIconSvg width="24px" height="24px" />
           </Styled.FooterLink>
         </Styled.FooterLinksWrapper>
 

@@ -6,10 +6,17 @@ import LayoutFooter from "./LayoutFooter";
 
 import * as Styled from "./Layout.styles";
 
-export const Layout = (props) => {
+interface Props {
+  appRoutes: {
+    path: string;
+    label: string;
+  }[];
+}
+
+export const Layout: React.FC<Props> = ({ appRoutes }) => {
   return (
     <>
-      <LayoutNavigation {...props} />
+      <LayoutNavigation appRoutes={appRoutes} />
 
       <Styled.BodyWrapper>
         {/* An <Outlet> renders whatever child route is currently active */}
