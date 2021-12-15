@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { UseQueryResult } from "react-query";
 
-import { useUsers } from "../../users";
+import { useUsers, User } from "../../users";
 import { usePosts } from "../hooks";
+import { Post } from "../types";
 
 import * as Styled from "./Posts.styles";
 import { ContentWrapperStyle, TitleWrapperStyle } from "../../../global-styles";
@@ -10,8 +12,8 @@ import { USER_IMG, POST_IMG } from "../../../constants/test-data";
 
 export const Posts = () => {
   const navigate = useNavigate();
-  const { data: posts } = usePosts();
-  const { data: users } = useUsers();
+  const { data: posts }: UseQueryResult<Post[], Error> = usePosts();
+  const { data: users }: UseQueryResult<User[], Error> = useUsers();
 
   if (!posts || !users) {
     return <div>Loading...</div>;
@@ -31,7 +33,7 @@ export const Posts = () => {
   return (
     <ContentWrapperStyle>
       <TitleWrapperStyle>
-        <h2>Posts</h2>
+        <h2>Random 10 Posts</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
       </TitleWrapperStyle>
 

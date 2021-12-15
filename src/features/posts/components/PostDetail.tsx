@@ -24,8 +24,7 @@ export const PostDetail: React.FC<{}> = () => {
   return (
     <ContentWrapperStyle>
       <Styled.PostCoverWrapper>
-        <img src={POST_IMG} alt="" className="w-full h-96 object-center object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white" />
+        <img src={POST_IMG} alt="" />
       </Styled.PostCoverWrapper>
 
       <TitleWrapperStyle style={{ top: "-72px", position: "relative" }}>
